@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public int numberCoins;
+    public int numberCoins = 0;
     public Text numberCoinsText;
+    public int numberCoinsForWin = 4;
     public static Inventory instance;
-    
 
     /// <summary>
     /// Awake is called when the script instance is being loaded.

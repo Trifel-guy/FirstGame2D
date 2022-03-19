@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public float flashDelay = 0.2f;//delay for flash player
     public float invincibilityTime = 3f;
+    public GameObject deathScreen = null;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,10 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= damage;
             healthBarre.SetHealth(currentHealth);
             isInvicible = true;
+            if (currentHealth == 0){
+                //show death screen
+                this.deathScreen.SetActive(true);
+            }
             StartCoroutine(InvicibilityFlash());
             StartCoroutine(offInvincibilityDelay());
         }
